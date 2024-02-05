@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "contacts",
   "info": {
     "singularName": "contact",
@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "label": {
+    "facebook": {
       "type": "string"
     },
-    "path": {
+    "instagram": {
       "type": "string"
     },
-    "ariaLabel": {
+    "linkedin": {
       "type": "string"
     }
   }

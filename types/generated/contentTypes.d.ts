@@ -303,7 +303,7 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactContact extends Schema.CollectionType {
+export interface ApiContactContact extends Schema.SingleType {
   collectionName: 'contacts';
   info: {
     singularName: 'contact';
@@ -315,9 +315,9 @@ export interface ApiContactContact extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    label: Attribute.String;
-    path: Attribute.String;
-    ariaLabel: Attribute.String;
+    facebook: Attribute.String;
+    instagram: Attribute.String;
+    linkedin: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

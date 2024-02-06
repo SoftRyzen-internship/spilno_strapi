@@ -303,6 +303,30 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiCaseCase extends Schema.CollectionType {
+  collectionName: 'cases';
+  info: {
+    singularName: 'case';
+    pluralName: 'cases';
+    displayName: 'Cases';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.UID;
+    text: Attribute.String;
+    img: Attribute.Media;
+    alt: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::case.case', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::case.case', 'oneToOne', 'admin::user'> & Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Schema.SingleType {
   collectionName: 'contacts';
   info: {
@@ -688,6 +712,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::case.case': ApiCaseCase;
       'api::contact.contact': ApiContactContact;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

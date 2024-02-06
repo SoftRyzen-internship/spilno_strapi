@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cases",
+  "info": {
+    "singularName": "case",
+    "pluralName": "cases",
+    "displayName": "Cases",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "text": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "alt": {
+      "type": "string"
+    }
+  }
+}

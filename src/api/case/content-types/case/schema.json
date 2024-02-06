@@ -30,6 +30,12 @@
     },
     "alt": {
       "type": "string"
+    },
+    "types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::type.type",
+      "mappedBy": "case"
     }
   }
 }

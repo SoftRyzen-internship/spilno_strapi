@@ -4,7 +4,7 @@
   "info": {
     "singularName": "case",
     "pluralName": "cases",
-    "displayName": "Cases",
+    "displayName": "cases",
     "description": ""
   },
   "options": {
@@ -13,29 +13,41 @@
   "pluginOptions": {},
   "attributes": {
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "text": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "img": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "alt": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "types": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::type.type",
       "mappedBy": "case"
+    },
+    "mainPage": {
+      "type": "boolean",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
     }
   }
 }

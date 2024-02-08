@@ -711,19 +711,42 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
     singularName: 'partner';
     pluralName: 'partners';
     displayName: 'partners';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    alt: Attribute.String;
-    img: Attribute.Media;
+    alt: Attribute.String & Attribute.Required;
+    img: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::partner.partner', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::partner.partner', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReviewReview extends Schema.CollectionType {
+  collectionName: 'reviews';
+  info: {
+    singularName: 'review';
+    pluralName: 'reviews';
+    displayName: 'reviews';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::review.review', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::review.review', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -770,6 +793,7 @@ declare module '@strapi/types' {
       'api::case.case': ApiCaseCase;
       'api::contact.contact': ApiContactContact;
       'api::partner.partner': ApiPartnerPartner;
+      'api::review.review': ApiReviewReview;
       'api::type.type': ApiTypeType;
     }
   }

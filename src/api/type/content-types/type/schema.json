@@ -11,16 +11,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "case": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::case.case",
-      "inversedBy": "types"
-    },
     "name": {
       "type": "string",
       "unique": true,
       "required": true
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case.case",
+      "inversedBy": "types"
     }
   }
 }

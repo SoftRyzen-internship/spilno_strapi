@@ -14,7 +14,8 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "title"
     },
     "text": {
       "type": "string",
@@ -22,7 +23,7 @@
     },
     "img": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
@@ -37,9 +38,9 @@
     },
     "types": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::type.type",
-      "mappedBy": "case"
+      "mappedBy": "cases"
     },
     "mainPage": {
       "type": "boolean",

@@ -665,11 +665,11 @@ export interface ApiCaseCase extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID & Attribute.Required;
+    slug: Attribute.UID<'api::case.case', 'title'> & Attribute.Required;
     text: Attribute.String & Attribute.Required;
     img: Attribute.Media & Attribute.Required;
     alt: Attribute.String & Attribute.Required;
-    types: Attribute.Relation<'api::case.case', 'oneToMany', 'api::type.type'>;
+    types: Attribute.Relation<'api::case.case', 'manyToMany', 'api::type.type'>;
     mainPage: Attribute.Boolean & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
@@ -705,6 +705,29 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiPartnerPartner extends Schema.CollectionType {
+  collectionName: 'partners';
+  info: {
+    singularName: 'partner';
+    pluralName: 'partners';
+    displayName: 'partners';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    alt: Attribute.String;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::partner.partner', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::partner.partner', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTypeType extends Schema.CollectionType {
   collectionName: 'types';
   info: {
@@ -716,8 +739,8 @@ export interface ApiTypeType extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    case: Attribute.Relation<'api::type.type', 'manyToOne', 'api::case.case'>;
     name: Attribute.String & Attribute.Required & Attribute.Unique;
+    cases: Attribute.Relation<'api::type.type', 'manyToMany', 'api::case.case'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -746,6 +769,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::case.case': ApiCaseCase;
       'api::contact.contact': ApiContactContact;
+      'api::partner.partner': ApiPartnerPartner;
       'api::type.type': ApiTypeType;
     }
   }

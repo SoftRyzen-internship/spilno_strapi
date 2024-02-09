@@ -748,7 +748,7 @@ export interface ApiReviewReview extends Schema.CollectionType {
     avatar: Attribute.Media & Attribute.Required;
     name: Attribute.String & Attribute.Required;
     position: Attribute.String & Attribute.Required;
-    project: Attribute.String & Attribute.Required;
+    company: Attribute.String;
     type: Attribute.Enumeration<['video', 'text']> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -50,9 +50,9 @@
       "type": "string",
       "required": true
     },
-    "project": {
+    "company": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "type": {
       "type": "enumeration",

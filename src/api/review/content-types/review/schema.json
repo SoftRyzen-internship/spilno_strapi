@@ -11,5 +11,56 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "from": {
+      "type": "enumeration",
+      "enum": [
+        "business",
+        "trainee"
+      ],
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "project": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "video",
+        "text"
+      ],
+      "required": true
+    }
+  }
 }

@@ -741,6 +741,15 @@ export interface ApiReviewReview extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
+    from: Attribute.Enumeration<['business', 'trainee']> & Attribute.Required;
+    text: Attribute.Text;
+    url: Attribute.String;
+    preview: Attribute.Media;
+    avatar: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    position: Attribute.String & Attribute.Required;
+    project: Attribute.String & Attribute.Required;
+    type: Attribute.Enumeration<['video', 'text']> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

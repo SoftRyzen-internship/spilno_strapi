@@ -13,13 +13,16 @@
   "pluginOptions": {},
   "attributes": {
     "facebook": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "instagram": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "linkedin": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

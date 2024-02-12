@@ -692,9 +692,9 @@ export interface ApiContactContact extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    facebook: Attribute.String;
-    instagram: Attribute.String;
-    linkedin: Attribute.String;
+    facebook: Attribute.String & Attribute.Required;
+    instagram: Attribute.String & Attribute.Required;
+    linkedin: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

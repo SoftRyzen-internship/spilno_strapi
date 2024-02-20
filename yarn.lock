@@ -8451,7 +8451,6 @@ react-intl@6.4.1:
     intl-messageformat "10.3.4"
     tslib "^2.4.0"
 
-<<<<<<< HEAD
 react-intl@^5.25.1:
   version "5.25.1"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-5.25.1.tgz#68a73aefc485c9bf70062381ae7f6f4791680879"
@@ -8468,8 +8467,6 @@ react-intl@^5.25.1:
     intl-messageformat "9.13.0"
     tslib "^2.1.0"
 
-=======
->>>>>>> 33511e16102794ba42305f1d253921c8eb7d08cb
 react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -9455,7 +9452,6 @@ statuses@2.0.1, statuses@^2.0.1:
   resolved "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
 
-<<<<<<< HEAD
 strapi-plugin-vercel-deploy@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/strapi-plugin-vercel-deploy/-/strapi-plugin-vercel-deploy-1.4.0.tgz#bf4f5c5fde635c48d6327a3e99732a07e495e718"
@@ -9464,8 +9460,6 @@ strapi-plugin-vercel-deploy@^1.4.0:
     axios "^0.26.1"
     react-intl "^5.25.1"
 
-=======
->>>>>>> 33511e16102794ba42305f1d253921c8eb7d08cb
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
   resolved "https://registry.npmjs.org/stream-chain/-/stream-chain-2.2.5.tgz"

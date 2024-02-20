@@ -20,6 +20,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "strapi-plugin-vercel-deploy": "^1.4.0",
     "styled-components": "5.3.3"
   },
   "author": {
@@ -29,7 +30,7 @@
     "uuid": "d755ab2a-22f8-4431-b85f-6cf258afe09a"
   },
   "engines": {
-    "node": "18.19.0",
+    "node": "18.17.1",
     "npm": ">=6.0.0"
   },
   "license": "MIT"

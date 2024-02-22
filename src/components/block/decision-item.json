@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_decision_items",
+  "info": {
+    "displayName": "decisionItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 200
+    }
+  }
+}

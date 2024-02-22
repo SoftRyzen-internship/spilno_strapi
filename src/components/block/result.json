@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_block_results",
+  "info": {
+    "displayName": "result",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Результат"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

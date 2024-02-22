@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_block_decisions",
+  "info": {
+    "displayName": "decision",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Рішення"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 200
+    },
+    "decisionList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block.decision-item",
+      "required": true
+    },
+    "decisionImgFirst": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "decisionImgSecond": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "decisionImgThird": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "altFirst": {
+      "type": "string",
+      "required": true
+    },
+    "altSecond": {
+      "type": "string",
+      "required": true
+    },
+    "altThird": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

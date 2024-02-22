@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_block_problems",
+  "info": {
+    "displayName": "problems",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Проблема "
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "problemsImgFirst": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "problemsImgSecond": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "altFirst": {
+      "type": "string",
+      "required": true
+    },
+    "altSecond": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

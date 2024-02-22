@@ -14,7 +14,8 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "title"
     },
     "title": {
       "type": "string",
@@ -31,11 +32,39 @@
       "mappedBy": "pages"
     },
     "heroImg": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "problems": {
+      "type": "component",
+      "repeatable": false,
+      "component": "block.problems",
+      "required": true
+    },
+    "analysis": {
+      "type": "component",
+      "repeatable": false,
+      "component": "block.analysis",
+      "required": true
+    },
+    "decision": {
+      "type": "component",
+      "repeatable": false,
+      "component": "block.decision",
+      "required": true
+    },
+    "result": {
+      "type": "component",
+      "repeatable": false,
+      "component": "block.result",
+      "required": true
+    },
+    "alt": {
+      "type": "string",
       "required": true
     }
   }

@@ -801,6 +801,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
     mainPage: Attribute.Boolean & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     link: Attribute.String & Attribute.Required;
+    test: Attribute.Relation<'api::case.case', 'oneToOne', 'api::test.test'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -866,6 +867,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     decision: Attribute.Component<'block.decision'> & Attribute.Required;
     result: Attribute.Component<'block.result'> & Attribute.Required;
     alt: Attribute.String & Attribute.Required;
+    test: Attribute.Relation<'api::page.page', 'oneToOne', 'api::test.test'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -947,6 +949,31 @@ export interface ApiReviewReview extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestTest extends Schema.CollectionType {
+  collectionName: 'tests';
+  info: {
+    singularName: 'test';
+    pluralName: 'tests';
+    displayName: 'test';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.UID;
+    case: Attribute.Relation<'api::test.test', 'oneToOne', 'api::case.case'>;
+    page: Attribute.Relation<'api::test.test', 'oneToOne', 'api::page.page'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTypeType extends Schema.CollectionType {
   collectionName: 'types';
   info: {
@@ -995,6 +1022,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::review.review': ApiReviewReview;
+      'api::test.test': ApiTestTest;
       'api::type.type': ApiTypeType;
     }
   }

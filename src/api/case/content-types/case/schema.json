@@ -50,6 +50,12 @@
     "link": {
       "type": "string",
       "required": true
+    },
+    "test": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::test.test",
+      "mappedBy": "case"
     }
   }
 }

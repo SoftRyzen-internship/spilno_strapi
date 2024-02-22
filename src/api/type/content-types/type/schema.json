@@ -4,7 +4,8 @@
   "info": {
     "singularName": "type",
     "pluralName": "types",
-    "displayName": "type"
+    "displayName": "type",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,6 +21,12 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::case.case",
+      "inversedBy": "types"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
       "inversedBy": "types"
     }
   }

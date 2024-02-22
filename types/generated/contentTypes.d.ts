@@ -706,6 +706,31 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'pages';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.UID & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    types: Attribute.Relation<'api::page.page', 'manyToMany', 'api::type.type'>;
+    heroImg: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> & Attribute.Private;
+  };
+}
+
 export interface ApiPartnerPartner extends Schema.CollectionType {
   collectionName: 'partners';
   info: {
@@ -767,6 +792,7 @@ export interface ApiTypeType extends Schema.CollectionType {
     singularName: 'type';
     pluralName: 'types';
     displayName: 'type';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -774,6 +800,7 @@ export interface ApiTypeType extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     cases: Attribute.Relation<'api::type.type', 'manyToMany', 'api::case.case'>;
+    pages: Attribute.Relation<'api::type.type', 'manyToMany', 'api::page.page'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -802,6 +829,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::case.case': ApiCaseCase;
       'api::contact.contact': ApiContactContact;
+      'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'api::review.review': ApiReviewReview;
       'api::type.type': ApiTypeType;

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slugs",
+  "info": {
+    "singularName": "slug",
+    "pluralName": "slugs",
+    "displayName": "slugs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page",
+      "inversedBy": "slug"
+    }
+  }
+}

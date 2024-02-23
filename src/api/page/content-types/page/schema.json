@@ -12,15 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slug": {
-      "type": "uid",
-      "required": true,
-      "targetField": "title"
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "text",
       "required": true
@@ -67,11 +58,15 @@
       "type": "string",
       "required": true
     },
-    "test": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::test.test",
-      "inversedBy": "page"
+      "target": "api::slug.slug",
+      "mappedBy": "page"
     }
   }
 }

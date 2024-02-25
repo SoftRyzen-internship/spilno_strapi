@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slug": {
-      "type": "uid",
-      "required": true,
-      "targetField": "title"
-    },
     "text": {
       "type": "string",
       "required": true
@@ -50,6 +45,12 @@
     "link": {
       "type": "string",
       "required": true
+    },
+    "slug": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slug.slug",
+      "mappedBy": "case"
     }
   }
 }

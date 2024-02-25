@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slug",
     "pluralName": "slugs",
-    "displayName": "slugs"
+    "displayName": "slugs",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::page.page",
+      "inversedBy": "slug"
+    },
+    "case": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::case.case",
       "inversedBy": "slug"
     }
   }

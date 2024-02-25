@@ -793,7 +793,6 @@ export interface ApiCaseCase extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID<'api::case.case', 'title'> & Attribute.Required;
     text: Attribute.String & Attribute.Required;
     img: Attribute.Media & Attribute.Required;
     alt: Attribute.String & Attribute.Required;
@@ -801,6 +800,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
     mainPage: Attribute.Boolean & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     link: Attribute.String & Attribute.Required;
+    slug: Attribute.Relation<'api::case.case', 'oneToOne', 'api::slug.slug'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -953,6 +953,7 @@ export interface ApiSlugSlug extends Schema.CollectionType {
     singularName: 'slug';
     pluralName: 'slugs';
     displayName: 'slugs';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -961,6 +962,7 @@ export interface ApiSlugSlug extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::slug.slug', 'title'> & Attribute.Required;
     page: Attribute.Relation<'api::slug.slug', 'oneToOne', 'api::page.page'>;
+    case: Attribute.Relation<'api::slug.slug', 'oneToOne', 'api::case.case'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

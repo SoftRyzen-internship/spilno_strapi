@@ -67,6 +67,11 @@
       "relation": "oneToOne",
       "target": "api::slug.slug",
       "mappedBy": "page"
+    },
+    "review": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::review.review"
     }
   }
 }

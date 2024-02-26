@@ -48,8 +48,7 @@ export interface BlockDecision extends Schema.Component {
       Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
-    decisionList: Attribute.Component<'block.decision-item', true> &
-      Attribute.Required;
+    decisionList: Attribute.Component<'block.decision-item', true> & Attribute.Required;
     decisionImgFirst: Attribute.Media & Attribute.Required;
     decisionImgSecond: Attribute.Media & Attribute.Required;
     decisionImgThird: Attribute.Media & Attribute.Required;

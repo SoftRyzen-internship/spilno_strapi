@@ -60,7 +60,8 @@
     },
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 34
     },
     "slug": {
       "type": "relation",
